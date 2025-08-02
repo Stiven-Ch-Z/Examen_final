@@ -8,9 +8,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Logica\" />
-  </ItemGroup>
-
 </Project>
