@@ -42,6 +42,8 @@
             chboscuro = new CheckBox();
             btnlimpiar = new Button();
             btncrear = new Button();
+            grbgenero = new GroupBox();
+            grbgenero.SuspendLayout();
             SuspendLayout();
             // 
             // btnsalir
@@ -94,16 +96,17 @@
             // 
             txtnombre.Location = new Point(326, 154);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(367, 27);
+            txtnombre.Size = new Size(358, 27);
             txtnombre.TabIndex = 13;
             // 
             // cboclase
             // 
+            cboclase.DropDownStyle = ComboBoxStyle.DropDownList;
             cboclase.FormattingEnabled = true;
-            cboclase.Items.AddRange(new object[] { " Mago", "Guerrero", "Arquero" });
+            cboclase.Items.AddRange(new object[] { "Mago", "Guerrero", "Arquero" });
             cboclase.Location = new Point(326, 198);
             cboclase.Name = "cboclase";
-            cboclase.Size = new Size(163, 28);
+            cboclase.Size = new Size(209, 28);
             cboclase.TabIndex = 14;
             // 
             // lblclase
@@ -120,7 +123,7 @@
             // rdbmale
             // 
             rdbmale.AutoSize = true;
-            rdbmale.Location = new Point(333, 255);
+            rdbmale.Location = new Point(0, 26);
             rdbmale.Name = "rdbmale";
             rdbmale.Size = new Size(97, 24);
             rdbmale.TabIndex = 16;
@@ -131,7 +134,7 @@
             // rdbfemale
             // 
             rdbfemale.AutoSize = true;
-            rdbfemale.Location = new Point(449, 255);
+            rdbfemale.Location = new Point(103, 26);
             rdbfemale.Name = "rdbfemale";
             rdbfemale.Size = new Size(95, 24);
             rdbfemale.TabIndex = 17;
@@ -159,6 +162,7 @@
             chboscuro.TabIndex = 19;
             chboscuro.Text = "Modo oscuro";
             chboscuro.UseVisualStyleBackColor = true;
+            chboscuro.CheckedChanged += chboscuro_CheckedChanged;
             // 
             // btnlimpiar
             // 
@@ -171,6 +175,7 @@
             btnlimpiar.TabIndex = 20;
             btnlimpiar.Text = "Limpiar";
             btnlimpiar.UseVisualStyleBackColor = false;
+            btnlimpiar.Click += btnlimpiar_Click;
             // 
             // btncrear
             // 
@@ -183,18 +188,28 @@
             btncrear.TabIndex = 21;
             btncrear.Text = "Crear personaje";
             btncrear.UseVisualStyleBackColor = false;
+            btncrear.Click += btncrear_Click;
+            // 
+            // grbgenero
+            // 
+            grbgenero.Controls.Add(rdbmale);
+            grbgenero.Controls.Add(rdbfemale);
+            grbgenero.Location = new Point(333, 232);
+            grbgenero.Name = "grbgenero";
+            grbgenero.Size = new Size(202, 51);
+            grbgenero.TabIndex = 22;
+            grbgenero.TabStop = false;
             // 
             // Ejercicio5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(grbgenero);
             Controls.Add(btncrear);
             Controls.Add(btnlimpiar);
             Controls.Add(chboscuro);
             Controls.Add(lblgenero);
-            Controls.Add(rdbfemale);
-            Controls.Add(rdbmale);
             Controls.Add(lblclase);
             Controls.Add(cboclase);
             Controls.Add(txtnombre);
@@ -204,6 +219,8 @@
             Controls.Add(btnsalir);
             Name = "Ejercicio5";
             Text = "Ejercicio5";
+            grbgenero.ResumeLayout(false);
+            grbgenero.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +241,6 @@
         private CheckBox chboscuro;
         private Button btnlimpiar;
         private Button btncrear;
+        private GroupBox grbgenero;
     }
 }
