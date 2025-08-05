@@ -60,9 +60,9 @@ namespace Examen_final
         {
             bool esvalido = true; // aqui se crea la validacion y se pone que es true
 
-            if (string.IsNullOrEmpty(txtnombre.Text)) // aqui estan las validaciones tipicas si esta vacio y si lo que se introdujo fue un decimal
+            if (string.IsNullOrEmpty(txtnombre.Text) || (!System.Text.RegularExpressions.Regex.IsMatch(txtnombre.Text, @"^[a-zA-Z\s]+$"))) // aqui estan las validaciones tipicas si esta vacio o el nombre tiene numeros y si lo que se introdujo era un decimal o no
             {
-                MessageBox.Show("Por favor agregue un nombre para el estudiante", "No hay nombre para el estudiante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor agregue un nombre para el estudiante y valide que no tenga numeros", "No hay nombre para el estudiante o no es valido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtnombre.Focus();
                 esvalido = false;
             }
